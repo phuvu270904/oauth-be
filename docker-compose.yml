@@ -27,7 +27,7 @@ services:
       - NODE_ENV=production
       - GOOGLE_CLIENT_ID=379548023802-gco09cs45q0j44vpqe7c59e4pg3lnph0.apps.googleusercontent.com
       - GOOGLE_CLIENT_SECRET=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
-      - GOOGLE_CALLBACK_URL=http://localhost:3000/auth/google/callback
+      - GOOGLE_CALLBACK_URL=http://45.77.38.239.nip.io:3000/auth/google/callback
     ports:
       - "3000:3000"
     depends_on:
