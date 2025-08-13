@@ -154,4 +154,30 @@ export class AuthController {
   async googleAuthRedirect(@Req() req) {
     return this.authService.googleLogin(req);
   }
+
+  @Get('users')
+  @ApiOperation({ summary: 'Get all users (public endpoint)' })
+  @ApiResponse({
+    status: 200,
+    description: 'List of all users retrieved successfully',
+    schema: {
+      example: [
+        {
+          id: 'uuid-1',
+          email: 'user1@example.com',
+          firstName: 'John',
+          lastName: 'Doe',
+        },
+        {
+          id: 'uuid-2',
+          email: 'user2@example.com',
+          firstName: 'Jane',
+          lastName: 'Smith',
+        },
+      ],
+    },
+  })
+  async getAllUsers() {
+    return this.authService.getAllUsers();
+  }
 }

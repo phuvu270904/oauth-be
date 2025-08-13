@@ -163,4 +163,11 @@ export class AuthService {
       ...tokens,
     };
   }
+
+  async getAllUsers() {
+    const users = await this.userRepository.find({
+      select: ['id', 'email', 'firstName', 'lastName'],
+    });
+    return users;
+  }
 }
